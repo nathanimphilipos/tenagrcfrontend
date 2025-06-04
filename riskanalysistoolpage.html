@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Risk Analysis Tool - EasyGRC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="risk-tool-container">
+  <h1 class="page-title">RISK ANALYSIS TOOL</h1>
+  <p class="intro-text">Take this short survey to assess your organization's risk profile.</p>
+
+  <form class="risk-form">
+    <div class="form-group">
+      <label for="industry">1. What industry does your organization belong to?</label>
+      <input type="text" id="industry" name="industry" placeholder="e.g., Finance, Healthcare, Tech" />
+    </div>
+
+    <div class="form-group">
+      <label for="risk-tolerance">2. On a scale of 1 to 10, how risk-tolerant is your organization?</label>
+      <input type="range" id="risk-tolerance" name="risk-tolerance" min="1" max="10" />
+    </div>
+
+    <div class="form-group">
+      <label for="priority">3. What is your top priority?</label>
+      <select id="priority" name="priority">
+        <option value="security">Security</option>
+        <option value="compliance">Compliance</option>
+        <option value="efficiency">Operational Efficiency</option>
+        <option value="growth">Business Growth</option>
+      </select>
+    </div>
+
+    <button type="submit">Generate Risk Dashboard</button>
+  </form>
+
+  <div class="dashboard-placeholder">
+    <h2>📊 Risk Dashboard (Coming Soon)</h2>
+    <p>This section will generate a visual dashboard and heatmap based on your survey responses.</p>
+  </div>
+</div>
+</body>
+</html>

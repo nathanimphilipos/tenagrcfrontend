@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TenaGRC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#risk-analysis-tool">Risk Analysis Tool</a></li>
+    <li><a href="#emerging-risks">Emerging Risks</a></li>
+    <li><a href="#mitigation-strategies">Mitigation Strategies</a></li>
+    <li><a href="#contact-us">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- VIDEO HERO -->
+<div class="background-container">
+  <div class="top-section"></div>
+  <div class="video-section">
+    <video id="background-video" muted autoplay loop>
+      <source src="background-video/background_addis.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="text-overlay">
+      <h1>Welcome to TenaGRC</h1>
+    </div>
+  </div>
+  <div class="bottom-section"></div>
+</div>
+
+<!-- Risk Analysis Tool -->
+<section id="risk-analysis-tool" class="risk-tool-container">
+  <h1 class="page-title">RISK ANALYSIS TOOL</h1>
+  <p class="intro-text">Take this short survey to assess your organization's risk profile.</p>
+
+  <form class="risk-form">
+
+    <!-- Company Industry -->
+    <div class="form-group">
+      <label for="industry">1. Describe what your company does (in less than 100 words):</label>
+      <textarea id="industry" name="company-description" placeholder="Type a short description of your company's services" rows="2" required></textarea>>
+    </div>
+
+    <!-- Employee Count -->
+    <div class="form-group">
+      <label for="employee-count">2. How many employees does your company have?</label>
+      <input type="text" id="employee-count" name="employee-count" placeholder="# of employees" required />
+    </div>
+
+    <!-- Endpoint Count -->
+    <div class="form-group">
+      <label for="endpoint-count">3. Approximate number of endpoints in your environment:</label>
+      <input type="text" id="endpoint-count" name="endpoint-count" placeholder="# of endpoints" required />
+    </div>
+
+    <!-- Vulnerability Scanning -->
+    <div class="form-group">
+      <label for="vuln-scan">4. How often do you get a vulnerability scan?</label>
+      <select id="vuln-scan" name="vuln-scan" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Semi-annually</option>
+        <option>Annually</option>
+        <option>Less than annually</option>
+      </select>
+    </div>
+
+    <!-- Phishing Testing -->
+    <div class="form-group">
+      <label for="phishing-tests">5. How often does your company conduct phishing simulations?</label>
+      <select id="phishing-tests" name="phishing-tests" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Annually</option>
+        <option>Rarely</option>
+        <option>Never</option>
+      </select>
+    </div>
+
+    <!-- Penetration Test Frequency -->
+    <div class="form-group">
+      <label for="pentest">6. How often do you get a penetration test?</label>
+      <select id="pentest" name="pentest" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Annually</option>
+        <option>Less than annually</option>
+      </select>
+    </div>
+
+    <!-- Penetration Test Scope -->
+    <div class="form-group">
+      <label for="pentest-scope">7. What is the scope of your penetration testing?</label>
+      <select id="pentest-scope" name="pentest-scope" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Network only</option>
+        <option>Physical only</option>
+        <option>Social engineering</option>
+        <option>All of the above</option>
+        <option>Not sure</option>
+      </select>
+    </div>
+
+    <!-- Risk Assessment -->
+    <div class="form-group">
+      <label for="risk-assessment">8. How often do you get a risk assessment?</label>
+      <select id="risk-assessment" name="risk-assessment" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Semi-annually</option>
+        <option>Annually</option>
+        <option>Less than annually</option>
+      </select>
+    </div>
+
+    <!-- Risk Prioritization -->
+    <div class="form-group">
+      <label for="risk-priority">9. How do you prioritize risks identified during risk assessments?</label>
+      <select id="risk-priority" name="risk-priority" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Only critical / high risks</option>
+        <option>Only high and medium risks</option>
+        <option>All risks are addressed equally</option>
+      </select>
+    </div>
+
+    <!-- Incident Response Plan -->
+    <div class="form-group">
+      <label for="ir-plan">10. Does your organization have an Incident Response Plan in place?</label>
+      <select id="ir-plan" name="ir-plan" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <!-- Security Onboarding -->
+    <div class="form-group">
+      <label for="onboarding-process">11. In a couple sentences, Describe your onboarding process from a cybersecurity standpoint:</label>
+      <input type="text" id="onboarding-process" name="onboarding-process" placeholder="multiple trainings, utilize knowbe4 etc."required maxlength="300" />
+    </div>
+
+    <!-- Security Education -->
+    <div class="form-group">
+      <label for="education-frequency">12. How frequently do employees receive cybersecurity awareness training?</label>
+      <select id="education-frequency" name="education-frequency" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Quarterly</option>
+        <option>Bi-annually</option>
+        <option>Annually</option>
+        <option>Ad hoc / as needed</option>
+        <option>Never</option>
+      </select>
+    </div>
+
+    <!-- AI Policies -->
+    <div class="form-group">
+      <label for="ai-policies">13. How are employees currently using AI tools (e.g., ChatGPT), and are there any formal policies or restrictions?</label>
+      <input type="text" id="ai-policies" name="ai-policies" placeholder="Briefly describe any safeguards against AI, if there are any." required maxlength="300" />
+    </div>
+
+    <!-- Budget Allocation -->
+    <div class="form-group">
+      <label for="security-budget">14. What percentage of your IT security budget is allocated to proactive measures?</label>
+      <select id="security-budget" name="security-budget" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>75%</option>
+        <option>50–75%</option>
+        <option>25–50%</option>
+        <option>0–25%</option>
+      </select>
+    </div>
+
+    <!-- Vulnerability Resolution Timeline -->
+    <div class="form-group">
+      <label for="vuln-resolution">15. What is your typical timeline for resolving a critical vulnerability after detection?</label>
+      <select id="vuln-resolution" name="vuln-resolution" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>&lt; 24 Hours</option>
+        <option>1–3 Days</option>
+        <option>1 Week</option>
+        <option>Over a Month</option>
+        <option>No Defined Timeline</option>
+      </select>
+    </div>
+
+    <!-- High-Impact Threat Response -->
+    <div class="form-group">
+      <label for="low-prob-threat">16. When confronted with a high-impact but low-probability threat (e.g., nation-state attack), how does your organization respond?</label>
+      <select id="low-prob-threat" name="low-prob-threat" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Invest in safeguards immediately</option>
+        <option>Monitor the risk</option>
+        <option>Accept the risk as unlikely</option>
+      </select>
+    </div>
+
+    <!-- Cyber Insurance -->
+    <div class="form-group">
+      <label for="cyber-insurance">17. What is your organization’s policy for insuring against cybersecurity risks?</label>
+      <select id="cyber-insurance" name="cyber-insurance" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Comprehensive insurance</option>
+        <option>Limited insurance</option>
+        <option>No insurance</option>
+      </select>
+    </div>
+
+    <!-- Risk Metrics -->
+    <div class="form-group">
+      <label for="risk-metrics">18. What metrics does your organization prioritize when reporting cybersecurity risks to executives or leadership?</label>
+      <select id="risk-metrics" name="risk-metrics" required>
+        <option disabled selected>Choose one of the following</option>
+        <option>Financial impact</option>
+        <option>Compliance gaps</option>
+        <option>Likelihood of occurrence</option>
+        <option>Operational impact</option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Generate Risk Dashboard</button>
+  </form>
+
+  <!-- Analyzer & Visualizer -->
+  <div id="risk-results" style="display: none; margin-top: 20px;">
+    <h3>Risk Score: <span id="score-value"></span>/10</h3>
+    <div style="width: 100%; background-color: #eee; border-radius: 8px; overflow: hidden;">
+      <div id="risk-bar" style="height: 30px; width: 0%; background-color: red; transition: width 0.8s ease;"></div>
+    </div>
+    <p id="risk-analysis" style="margin-top: 10px;"></p>
+  </div>
+
+
+
+  <div class="dashboard-placeholder">
+    <h2>📊 Risk Dashboard </h2>
+    <p>This section will generate a visual dashboard and heatmap based on your survey responses.</p>
+  </div>
+</section>
+
+<!-- Footer Sections omitted for brevity -->
+
+<!-- Backend Integration -->
+<script>
+  // Visualization logic
+  function showRiskVisualization(score, color, analysis) {
+    const bar = document.getElementById("risk-bar");
+    const scoreText = document.getElementById("score-value");
+    const analysisText = document.getElementById("risk-analysis");
+
+    scoreText.innerText = score.toFixed(1);
+    bar.style.width = `${(score / 10) * 100}%`;
+    bar.style.backgroundColor = color;
+    analysisText.innerText = analysis;
+
+    document.getElementById("risk-results").style.display = "block";
+  }
+
+  document.querySelector(".risk-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const jsonData = {};
+
+    formData.forEach((value, key) => {
+      jsonData[key] = value;
+    });
+
+    const responseElement = document.querySelector(".dashboard-placeholder");
+    responseElement.innerHTML = "<p>⏳ Analyzing your responses...</p>";
+
+    try {
+      const response = await fetch("https://d7f2-47-24-196-4.ngrok-free.app/analyze-json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonData)
+      });
+
+      const result = await response.json();
+
+      // Show score + bar if available
+      if (result.score && result.color && result.analysis) {
+        showRiskVisualization(result.score, result.color, result.analysis);
+      }
+
+      // Display GPT-generated dashboard
+      let insights = "";
+      if (result.insights) {
+        try {
+          const parsed = JSON.parse(result.insights);
+          insights = `
+            <h2>📊 Risk Dashboard</h2>
+            <p><strong>Risk Posture:</strong> ${parsed.posture}</p>
+            <p><strong>Top 3 Concerns:</strong></p>
+            <ul>${parsed.top_risks.map(risk => `<li>${risk}</li>`).join("")}</ul>
+            <p><strong>Mitigation Strategies:</strong></p>
+            <ul>${parsed.mitigations.map(m => `<li>${m}</li>`).join("")}</ul>
+            <p><strong>Summary:</strong> ${parsed.summary}</p>
+            <button id="download-csv" style="margin-top: 20px; background: white; color: black; border: none; padding: 10px 20px; font-weight: bold; font-size: 1rem; cursor: pointer; border-radius: 5px;">Download Answer Results (CSV)</button>
+          `;
+        } catch (err) {
+          insights = `<pre>${result.insights}</pre>`;
+        }
+      } else {
+        insights = "<p>🛑 No dashboard insights returned.</p>";
+      }
+
+      responseElement.innerHTML = insights;
+
+      document.getElementById("download-csv").addEventListener("click", function () {
+        const headers = Object.keys(jsonData).join(",");
+        const values = Object.values(jsonData).join(",");
+        const csvContent = `${headers}\n${values}`;
+
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute("download", "easygrc_risk_responses.csv");
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+
+    } catch (err) {
+      responseElement.innerHTML = "<p>⚠️ Failed to generate dashboard. Please try again.</p>";
+      console.error(err);
+    }
+  });
+</script>
+
+
+</body>
+</html>

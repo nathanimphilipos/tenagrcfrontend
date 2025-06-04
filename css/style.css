@@ -1,0 +1,343 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: lowercase;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.95rem;
+  text-transform: lowercase;
+  transition: opacity 0.3s;
+}
+
+.nav-links li a:hover {
+  opacity: 0.7;
+}
+
+/* Background Container */
+.background-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 60px; /* Offset for navbar */
+}
+
+.top-section, .bottom-section {
+  flex: 1;
+  background: black;
+}
+
+.top-section {
+  background: linear-gradient(black, transparent);
+}
+
+.bottom-section {
+  background: linear-gradient(transparent, black);
+}
+
+/* Video Section */
+.video-section {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-section video {
+  width: 100vw;
+  height: 38vh;
+  top: 0;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+/* Text Overlay */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.text-overlay h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* Mission Section */
+.mission {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ccc;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* Signup Section */
+.signup {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.signup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+}
+
+.signup form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.signup input[type="email"] {
+  padding: 0.8rem;
+  width: 250px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.signup button {
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.signup button:hover {
+  opacity: 0.85;
+}
+
+/* Contact Footer */
+.contact-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #111;
+  color: #aaa;
+}
+
+.contact-section h3 {
+  text-transform: lowercase;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section p {
+  margin: 0.5rem 0;
+}
+
+.contact-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  opacity: 0.7;
+}
+.risk-tool-container {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.risk-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-group input[type="range"] {
+  width: 100%;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #ddd;
+}
+
+.dashboard-placeholder {
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  padding: 15px 40px;
+  z-index: 999;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ccc;
+}
+
+/* Ensure sections don’t hide behind fixed nav */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Section Styling */
+.generic-section {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.generic-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.generic-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Multiple Choice Options */
+select {
+  appearance: none;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+/* Text & Dropdown Input Styling - Unified Dark Theme */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Optional: Ensure placeholder text is visible */
+::placeholder {
+  color: #ccc;
+  opacity: 0.8;
+}
+
