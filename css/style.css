@@ -109,10 +109,11 @@ body, html {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding-top: 60px;
+  padding-top: 60px; /* navbar offset */
 }
 
-.top-section, .bottom-section {
+.top-section,
+.bottom-section {
   flex: 1;
   background: black;
 }
@@ -125,7 +126,6 @@ body, html {
   background: linear-gradient(transparent, black);
 }
 
-/* Video Section */
 .video-section {
   flex: 1;
   position: relative;
@@ -134,19 +134,24 @@ body, html {
 
 .video-section video {
   width: 100vw;
-  height: 38vh;
+  height: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-/* Text Overlay */
 .text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  text-align: center;
 }
 
 .text-overlay h1 {
