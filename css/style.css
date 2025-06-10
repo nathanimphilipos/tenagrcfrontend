@@ -16,7 +16,7 @@ body, html {
   width: 100%;
   background: black;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
 }
 
 .nav-container {
@@ -27,6 +27,7 @@ body, html {
   padding: 1rem 1rem;
   max-width: 100%;
   overflow-x: hidden;
+  gap: 0.5rem;
 }
 
 /* Brand Logo */
@@ -80,6 +81,20 @@ body, html {
   color: #ccc;
 }
 
+/* Nav Hook */
+.nav-hook {
+  color: white !important;
+  font-weight: 700;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-align: left;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+  width: 100%;
+}
+
 /* Responsive Nav Behavior */
 @media (max-width: 900px) {
   .nav-toggle {
@@ -101,6 +116,10 @@ body, html {
   .nav-links li {
     text-align: center;
     width: 100%;
+  }
+
+  .nav-hook {
+    display: none;
   }
 }
 
@@ -344,4 +363,23 @@ section {
   font-weight: bold;
   text-align: center;
   z-index: 2;
+}
+
+/* Demo Button */
+#demo-trigger {
+  background: white;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#demo-trigger:hover {
+  background: #ddd;
+  color: black;
 }
