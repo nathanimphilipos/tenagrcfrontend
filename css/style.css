@@ -423,5 +423,7 @@ section {
   width: 0%;
   background: lightgreen;
   border-radius: 10px;
-  transition: width 1s ease-in-out;
-}
+  transition: width 10s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+
