@@ -299,12 +299,40 @@
         const result = await response.json();
         console.log("✅ Response from backend:", result);
 
+        const parsedInsights = JSON.parse(result.insights);
+
         document.querySelector(".dashboard-placeholder").innerHTML = `
-          <h2>📊 Risk Dashboard</h2>
-          <p><strong>Score:</strong> ${result.score} (${result.color})</p>
-          <p><strong>Analysis:</strong> ${result.analysis}</p>
-          <p><strong>Summary:</strong> ${JSON.parse(result.insights).summary}</p>
-        `;
+  <h2>📊 Risk Dashboard</h2>
+
+  <div style="margin: 1rem 0;">
+    <strong>Score:</strong> ${result.score} (${result.color})
+    <div style="background: #333; border-radius: 10px; overflow: hidden; margin-top: 0.5rem;">
+      <div style="height: 20px; background: ${result.color}; width: ${result.score * 10}%;"></div>
+    </div>
+  </div>
+
+  <p><strong>Analysis:</strong> ${result.analysis}</p>
+
+  <h3>🧠 What You're Doing Well</h3>
+  <ul>
+    ${parsedInsights.strengths.map(item => `<li>✔️ ${item}</li>`).join("")}
+  </ul>
+
+  <h3>⚠️ Top Risks</h3>
+  <ul>
+    ${parsedInsights.top_risks.map(risk => `<li>⚠️ ${risk}</li>`).join("")}
+  </ul>
+
+  <h3>🛠️ Recommended Mitigations</h3>
+  <ul>
+    ${parsedInsights.mitigations.map(mit => `<li>🔧 ${mit}</li>`).join("")}
+  </ul>
+
+  <h3>📄 Summary</h3>
+  <p>${parsedInsights.summary}</p>
+`;
+        document.querySelector(".dashboard-placeholder").scrollIntoView({ behavior: "smooth" });
+
       } catch (error) {
         console.error("❌ Error submitting form:", error);
         document.querySelector(".dashboard-placeholder").innerHTML = `
