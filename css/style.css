@@ -410,3 +410,18 @@ section {
   background: #ddd;
   color: black;
 }
+
+/* === Score Animation Styles === */
+#score-label {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+#score-bar {
+  height: 20px;
+  width: 0%;
+  background: lightgreen;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}

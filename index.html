@@ -305,9 +305,9 @@
   <h2>📊 Risk Dashboard</h2>
 
   <div style="margin: 1rem 0;">
-    <strong>Score:</strong> ${result.score} (${result.color})
+    <div id="score-label" style="font-size: 1.8rem; font-weight: bold;">Score: 0.0</div>
     <div style="background: #333; border-radius: 10px; overflow: hidden; margin-top: 0.5rem;">
-      <div style="height: 20px; background: ${result.color}; width: ${result.score * 10}%;"></div>
+      <div id="score-bar" style="height: 20px; width: 0%; background: ${result.color}; transition: width 1s ease;"></div>
     </div>
   </div>
 
@@ -315,23 +315,60 @@
 
   <h3>🧠 What You're Doing Well</h3>
   <ul>
-    ${parsedInsights.strengths.map(item => `<li>✔️ ${item}</li>`).join("")}
+    ${parsedInsights.strengths.map(item => `<li>${item}</li>`).join("")}
   </ul>
 
   <h3>⚠️ Top Risks</h3>
   <ul>
-    ${parsedInsights.top_risks.map(risk => `<li>⚠️ ${risk}</li>`).join("")}
+    ${parsedInsights.top_risks.map(risk => `<li>${risk}</li>`).join("")}
   </ul>
 
   <h3>🛠️ Recommended Mitigations</h3>
   <ul>
-    ${parsedInsights.mitigations.map(mit => `<li>🔧 ${mit}</li>`).join("")}
+    ${parsedInsights.mitigations.map(mit => {
+          return `<li>${typeof mit === "object" ? Object.values(mit).join(" — ") : mit}</li>`;
+        }).join("")}
   </ul>
 
   <h3>📄 Summary</h3>
   <p>${parsedInsights.summary}</p>
 `;
+
+// Animate bar fill
+        const scoreBar = document.getElementById("score-bar");
+        if (scoreBar) {
+          scoreBar.style.width = `${result.score * 10}%`;
+        }
+
+// Animate counter + dynamic color update
+        const scoreLabel = document.getElementById("score-label");
+        let current = 0.0;
+        const target = parseFloat(result.score);
+        const duration = 1000; // ms
+        const steps = 30;
+        const interval = duration / steps;
+        const increment = (target - current) / steps;
+
+        const getColor = (score) => {
+          if (score <= 3.0) return "red";
+          if (score <= 5.9) return "orange";
+          if (score <= 8.4) return "lightgreen";
+          return "green";
+        };
+
+        const counter = setInterval(() => {
+          current += increment;
+          const rounded = Math.min(target, current).toFixed(1);
+          scoreLabel.innerHTML = `Score: ${rounded}`;
+          scoreLabel.style.color = getColor(parseFloat(rounded));
+
+          if (current >= target) clearInterval(counter);
+        }, interval);
+
+// Scroll to dashboard
         document.querySelector(".dashboard-placeholder").scrollIntoView({ behavior: "smooth" });
+
+
 
       } catch (error) {
         console.error("❌ Error submitting form:", error);
