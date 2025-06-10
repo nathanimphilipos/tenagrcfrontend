@@ -226,7 +226,8 @@
       </select>
     </div>
 
-    <button type="submit">Generate Risk Dashboard</button>
+    <button type="button" id="generate-dashboard">Generate Risk Dashboard</button>
+
   </form>
 
   <div class="dashboard-placeholder">
@@ -269,12 +270,13 @@
     navLinks.classList.toggle('nav-open');
   });
 
-  // Risk form logic
-  window.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("#risk-form");
+  // Risk form submission
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("generate-dashboard");
+    const form = document.getElementById("risk-form");
 
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
+    button.addEventListener("click", async () => {
+      console.log("🚀 Button clicked!");
 
       const formData = new FormData(form);
       const data = {};
@@ -287,9 +289,9 @@
         const response = await fetch("https://easygrcbackend.onrender.com/analyze-json", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(data),
         });
 
         if (!response.ok) throw new Error("Network response was not ok");
@@ -298,21 +300,22 @@
         console.log("✅ Response from backend:", result);
 
         document.querySelector(".dashboard-placeholder").innerHTML = `
-      <h2>📊 Risk Dashboard</h2>
-      <p><strong>Score:</strong> ${result.score} (${result.color})</p>
-      <p><strong>Analysis:</strong> ${result.analysis}</p>
-      <p><strong>Summary:</strong> ${JSON.parse(result.insights).summary}</p>
-    `;
+          <h2>📊 Risk Dashboard</h2>
+          <p><strong>Score:</strong> ${result.score} (${result.color})</p>
+          <p><strong>Analysis:</strong> ${result.analysis}</p>
+          <p><strong>Summary:</strong> ${JSON.parse(result.insights).summary}</p>
+        `;
       } catch (error) {
         console.error("❌ Error submitting form:", error);
         document.querySelector(".dashboard-placeholder").innerHTML = `
-      <h2>⚠️ Something went wrong</h2>
-      <p>Please try again or check your network connection.</p>
-    `;
+          <h2>⚠️ Something went wrong</h2>
+          <p>Please try again or check your network connection.</p>
+        `;
       }
     });
   });
 </script>
+
 
 </body>
 </html>
