@@ -234,6 +234,14 @@
     <h2>📊 Risk Dashboard</h2>
     <p>This section will automatically generate a visual scale and some insight based on the analytics of your survey.</p>
   </div>
+
+  <!-- Spinner -->
+  <div id="spinner" style="display: none; text-align: center; margin-top: 20px;">
+    <p>analyzing your responses...</p>
+    <div class="loader"></div>
+  </div>
+
+
 </section>
 
 <!-- CONTACT US SECTION -->
@@ -277,6 +285,14 @@
 
     button.addEventListener("click", async () => {
       console.log("🚀 Button clicked!");
+      // Spinner
+      const spinner = document.getElementById("spinner");
+      spinner.style.display = "block";
+      setTimeout(() => {
+        spinner.style.opacity = "1";
+      }, 10);
+
+
 
       const formData = new FormData(form);
       const data = {};
@@ -330,7 +346,7 @@
         }).join("")}
   </ul>
 
-  <h3>📄 Summary</h3>
+  <h3> Summary</h3>
   <p>${parsedInsights.summary}</p>
 `;
 
@@ -366,8 +382,7 @@
         }, interval);
 
 // Scroll to dashboard
-        document.querySelector(".dashboard-placeholder").scrollIntoView({ behavior: "smooth" });
-
+        document.querySelector(".dashboard-placeholder").scrollIntoView({behavior: "smooth"});
 
 
       } catch (error) {
@@ -376,6 +391,12 @@
           <h2>⚠️ Something went wrong</h2>
           <p>Please try again or check your network connection.</p>
         `;
+      } finally {
+        // Always hide the spinner once the request is done (success or failure)
+        spinner.style.opacity = "0";
+        setTimeout(() => {
+          spinner.style.display = "none";
+        }, 300); // matches the transition duration
       }
     });
   });
