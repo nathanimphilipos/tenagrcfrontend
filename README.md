@@ -8,7 +8,7 @@ Built by a GRC Analyst for real-world teams, TenaGRC focuses on speed, clarity, 
 
 ---
 
-## 🚀 What is TenaGRC?
+##  What is TenaGRC?
 
 TenaGRC is a fast, survey-driven risk analysis tool that converts qualitative inputs into:
 - Structured risk narratives
@@ -25,7 +25,7 @@ TenaGRC is especially well-suited for:
 
 ---
 
-## 🧠 Design Philosophy
+## Design Philosophy
 
 Traditional GRC tools are often:
 - Heavy
@@ -44,7 +44,7 @@ Compliance should support progress, not slow it down.
 
 ---
 
-## 🔍 Key Features
+##  Key Features
 
 - **Instant Risk Scoring**  
   Calculate enterprise risk scores in seconds from structured inputs
@@ -66,7 +66,7 @@ Compliance should support progress, not slow it down.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 - **Backend:** Python, Flask
 - **Frontend:** HTML, CSS, JavaScript
@@ -78,7 +78,7 @@ Built to be modular, extensible, and cloud-native.
 
 ---
 
-## 🎯 Use Cases
+##  Use Cases
 
 - Rapid SOC 2 readiness assessments
 - Early FedRAMP alignment visibility
@@ -90,7 +90,7 @@ TenaGRC is not meant to replace full GRC platforms — it’s designed to **brid
 
 ---
 
-## 🤝 Philosophy on GRC
+## Philosophy on GRC
 
 At its core, TenaGRC is relationship-first.
 
@@ -104,7 +104,7 @@ TenaGRC exists to support that mindset.
 
 ---
 
-## 👤 About the Creator
+##  About the Creator
 
 TenaGRC was built by **Nathanim Philipos**, a GRC Analyst and MBA Candidate working at the intersection of security, automation, and communication.
 
@@ -112,7 +112,7 @@ The project is informed directly by hands-on experience running SOC 2 and GovRAM
 
 ---
 
-## 📬 Contact
+##  Contact
 
 Interested in TenaGRC, feedback, or collaboration?
 
